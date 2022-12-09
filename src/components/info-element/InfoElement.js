@@ -1,6 +1,7 @@
 import React from "react";
+import "./InfoElement.css";
 
-export const InfoElement = ({ elementName, elmentData }) => {
+const InfoElement = ({ elementName, elmentData }) => {
   return (
     <div className="ipInfo infoElement">
       <p className="infoName">{elementName}</p>
@@ -8,3 +9,5 @@ export const InfoElement = ({ elementName, elmentData }) => {
     </div>
   );
 };
+
+export default InfoElement;

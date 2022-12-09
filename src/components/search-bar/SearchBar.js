@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import "./SearchBar.css";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, ip }) => {
   const [searchedIp, setSearchedIp] = useState("");
   const [error, setError] = useState(null);
 
@@ -15,7 +16,8 @@ const SearchBar = ({ onSearch }) => {
 
   const validate = () => {
     let valid = true;
-    const ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    const ipformat =
+      /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     if (searchedIp.match(ipformat)) {
       setError(null);
     } else {
@@ -27,16 +29,23 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="searchBar">
-      <form>
+      <form className="searchBarForm">
         <input
-          className="searchBarInput"
+          // className="searchBarInput"
+          className={error ? "error searchBarInput" : "searchBarInput"}
           type="text"
-          placeholder="ip"
+          placeholder={ip}
           value={searchedIp}
           onChange={(e) => setSearchedIp(e.target.value)}
         ></input>
-        <button onClick={handleSubmit}>
-          <img src={require("../images/icon-arrow.svg")} alt="arrow" />
+        <button
+          onClick={handleSubmit}
+          className="searchBarButton"
+          // className={error ? "error searchBarButton" : "searchBarButton"}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+            <path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
+          </svg>
         </button>
       </form>
       {error && <div className="message">{error}</div>}

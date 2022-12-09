@@ -1,0 +1,5 @@
+.mapContainer {
+  grid-area: grid-content !important;
+  display: block;
+  /* min-height: 300px; */
+}
