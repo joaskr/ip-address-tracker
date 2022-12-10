@@ -41,7 +41,11 @@ const SearchBar = ({ onSearch, ip }) => {
           value={searchedIp}
           onChange={(e) => setSearchedIp(e.target.value)}
         ></input>
-        <button onClick={handleSubmit} className="searchBarButton">
+        <button
+          onClick={handleSubmit}
+          className="searchBarButton"
+          aria-label="Search"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
             <path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
           </svg>
@@ -52,3 +56,4 @@ const SearchBar = ({ onSearch, ip }) => {
   );
 };
 export default SearchBar;
+
