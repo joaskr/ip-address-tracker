@@ -30,19 +30,18 @@ const SearchBar = ({ onSearch, ip }) => {
   return (
     <div className="searchBar">
       <form className="searchBarForm">
+        <label htmlFor="ip" className="visually-hidden">
+          Ip address
+        </label>
         <input
-          // className="searchBarInput"
           className={error ? "error searchBarInput" : "searchBarInput"}
           type="text"
+          id="ip"
           placeholder={ip}
           value={searchedIp}
           onChange={(e) => setSearchedIp(e.target.value)}
         ></input>
-        <button
-          onClick={handleSubmit}
-          className="searchBarButton"
-          // className={error ? "error searchBarButton" : "searchBarButton"}
-        >
+        <button onClick={handleSubmit} className="searchBarButton">
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
             <path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
           </svg>

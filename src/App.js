@@ -36,27 +36,32 @@ function App() {
       <header className="header">
         <h1>IP Address Tracker</h1>
         <SearchBar onSearch={setIpFunc} ip={ipData.ip} />
+        {ipData === false ? null : (
+          <div className="info-container">
+            <InfoElement elementName="Ip address" elmentData={ipData.ip} />
+            <div className="separator"></div>
+            <InfoElement
+              elementName="Location"
+              elmentData={`${ipData.location.city}, ${ipData.location.region} ${ipData.location.postalCode}`}
+            />
+            <div className="separator"></div>
+            <InfoElement
+              elementName="Timezone"
+              elmentData={ipData.location.timezone}
+            />
+            <div className="separator"></div>
+            <InfoElement elementName="Isp" elmentData={ipData.isp} />
+          </div>
+        )}
       </header>
       <main>
         {ipData === false ? (
           <div className="lds-circle">
             <div></div>
-            <p>Loading...</p>
+            <p>Loading map...</p>
           </div>
         ) : (
-          <div>
-            <div style={{ display: "none" }}>
-              <InfoElement elementName="Ip address" elmentData={ipData.ip} />
-              <InfoElement
-                elementName="Location address"
-                elmentData={`${ipData.location.city}, ${ipData.location.region} ${ipData.location.postalCode}`}
-              />
-              <InfoElement
-                elementName="Timezone"
-                elmentData={ipData.location.timezone}
-              />
-              <InfoElement elementName="Isp" elmentData={ipData.isp} />
-            </div>
+          <div className="main-container">
             <MapComponent
               lat={ipData.location.lat}
               lng={ipData.location.lng}
@@ -71,3 +76,4 @@ function App() {
 }
 
 export default App;
+

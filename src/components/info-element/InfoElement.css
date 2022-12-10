@@ -1,0 +1,44 @@
+.infoElement {
+  text-align: center;
+  padding: 10px;
+}
+
+.infoName {
+  color: hsl(0, 0%, 59%);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.7rem;
+  margin-bottom: 0.4rem;
+}
+.infoData {
+  color: hsl(0, 0%, 17%);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 700px) {
+  .infoElement {
+    text-align: left;
+    padding: 10px;
+    width: 25%;
+    overflow-wrap: break-word;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .infoElement {
+    text-align: left;
+    padding: 20px;
+    width: 25%;
+    overflow-wrap: break-word;
+  }
+  .infoName {
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+  }
+  .infoData {
+    color: hsl(0, 0%, 17%);
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+}

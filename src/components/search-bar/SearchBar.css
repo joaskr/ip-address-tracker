@@ -10,6 +10,7 @@
 .searchBarInput {
   flex: 1;
   height: 2.8rem;
+  font-size: 18px;
   border: 1px solid hsl(0, 0%, 59%);
   border-radius: 10px 0px 0px 10px;
   padding: 15px;
@@ -25,11 +26,51 @@
 }
 
 .error {
-  border: 1px solid #ff2259;
+  border: 3px solid #ff0040;
 }
 
 .message {
   margin-top: 0.5rem;
-  font-size: 0.875rem;
-  color: #ff2259;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ff0040;
+}
+
+.visually-hidden {
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media screen and (min-width: 480px) {
+  .searchBar {
+    width: 60%;
+  }
+
+  .message {
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
+  }
+
+  .searchBarInput {
+    height: 4rem;
+    font-size: 18px;
+  }
+
+  .searchBarButton {
+    height: 4rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .searchBar {
+    width: 40%;
+  }
 }
