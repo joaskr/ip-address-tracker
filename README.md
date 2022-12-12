@@ -1,4 +1,4 @@
-# Frontend Mentor - Meet landing page solution
+# Frontend Mentor - IP Address Tracker solution
 
 This is a solution to the [IP Address Tracker](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0).
 
